@@ -1,7 +1,7 @@
 const arr = [
     [
       82, 59, -69,  5, 40,
-      -13, -68, 27, 80, 30
+      -13, -68, 27, -80, 30
     ],
     [
       39, 28,  7, -73, 72,
@@ -12,8 +12,8 @@ const arr = [
       57, -80, 66, -15, 70
     ],
     [
-      12, -34, 36, 14, -23,
-      28, 99, 75, -47, 59
+      12, -34, -3, 14, -23,
+      28, 99, -75, -47, 59
     ],
     [
       17, 19, -59, 17, 89,
@@ -25,28 +25,29 @@ const arr = [
     ],
     [
       76, 58, 73,  5, 31,
-      97,  7, 38, 80, 10
+      97,  7, -38, 80, 10
     ],
     [
-      61, 54, 92,  8, 85,
-      22, 31, 78, 37, 50
+      -61, 54, 92,  -8, 85,
+      22, -31, 78, 37, 50
     ],
     [
-      70,  3, 1, 22, 62,
+      -70,  3, 1, 22, 62,
       88, 33, 4, -99, 70
     ],
     [
       97, -15, 21, 92, 64,
-      85, 29, 59, -27,  0
+      85, -29, 59, -27,  0
     ]
   ]
 
 function findPositiveMinNum(arg){
-  arg.forEach((arr, idx) => {
-    arg[idx] = arr.filter(num => 
+  let cloneArr = JSON.parse(JSON.stringify(arg))
+  cloneArr.forEach((arr, idx) => {
+    cloneArr[idx] = arr.filter(num => 
       num >= 0)
   })
-  const arrMinNumbers = findMinNumb(arg)
+  const arrMinNumbers = findMinNumb(cloneArr)
   getArrToConsole(arrMinNumbers, "Наименьшее положительное число в массиве")
 }
 

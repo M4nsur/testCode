@@ -102,4 +102,6 @@ function checkReplace(arg) {
   }
   console.log(`Необходимо заменить ${count}`)
 }
-checkReplace(arr)
+addToStart(arr) // - Пометить строку с минимальным числом - звездочкой
+findPositiveMinNum(arr) // В каждой строке вывести наименьшее положительное число
+checkReplace(arr) // В каждой строке написать какое минимальное кол-во чисел 
